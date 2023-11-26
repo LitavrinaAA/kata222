@@ -18,7 +18,7 @@ public class CarServiceImp implements CarService {
 
     @Override
     public List<Car> listQuantityCars(int quantity) {
-        if ( quantity < 0 && quantity > cars.size()) {
+        if ( quantity < 0 || quantity > cars.size()) {
             quantity = 0;
         }
         return cars.stream().limit(quantity).toList();
