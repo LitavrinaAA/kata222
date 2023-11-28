@@ -20,8 +20,6 @@ public class CarServiceImp implements CarService {
     public List<Car> listQuantityCars(int quantity) {
         if ( quantity < 0 ) {
             quantity = 0;
-        } else if (quantity > cars.size()) {
-            return cars;
         }
         return cars.stream().limit(quantity).toList();
     }
